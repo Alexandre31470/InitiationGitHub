@@ -110,5 +110,9 @@ git bisect reset puis coller SHA1 du commit concerné par ce bug
 git revert puis coller l'ID du commit concerné par ce bug pour annuler son effet
 git stash pop pour récupérer le travail mis de côté
 
+# Réécrire l'historique en modifiant le dernier commit :
+git commit --amend
+
+
 
 
