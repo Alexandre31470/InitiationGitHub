@@ -14,6 +14,13 @@ git commit -m "message" pour lier un message à ton fichier. Vois ça comme l'ob
 
 git push pour envoyer ton projet à ton repository en ligne
 
+# Initialistaion de Git
 
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
+git config --global --list
+
+# Remonter sur version précédente
+git checkout numéro SHA1
+
+
