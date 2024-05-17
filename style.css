@@ -1,9 +1,9 @@
 h1 {
-    font-size: 24px;
+    font-size: 50px;
     color: #333; /* Couleur du texte */
     font-weight: bold; /* Gras */
     text-decoration: underline; /* Souligné */
-    margin-bottom: 10px; /* Marge en bas */
+    margin-bottom: 30px; /* Marge en bas */
   }
 
   p {
@@ -15,9 +15,15 @@ h1 {
 
 body{
   background-color: pink;
+  text-align: center;
 }
 
 img{
   height: 600px;
   width: 400px;
+
+}
+
+ul{
+  list-style-type: none;
 }
