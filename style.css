@@ -16,3 +16,8 @@ h1 {
 body{
   background-color: pink;
 }
+
+img{
+  height: 600px;
+  width: 400px;
+}
