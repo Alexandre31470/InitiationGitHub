@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Article</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Ajouter un Article</h2>
+        <form action="/submit-article" method="post">
+            <label for="title">Titre de l'Article</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="author">Auteur</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="content">Contenu de l'Article</label>
+            <textarea id="content" name="content" rows="10" required></textarea>
+
+            <label for="category">Catégorie</label>
+            <select id="category" name="category" required>
+                <option value="">Sélectionner une catégorie</option>
+                <option value="news">Actualités</option>
+                <option value="technology">Technologie</option>
+                <option value="lifestyle">Mode de vie</option>
+                <option value="health">Santé</option>
+                <option value="sports">Sports</option>
+            </select>
+
+            <label for="tags">Tags (séparés par des virgules)</label>
+            <input type="text" id="tags" name="tags">
+
+            <button type="submit">Soumettre l'Article</button>
+        </form>
+    </div>
+</body>
+
+</html>
