@@ -1,27 +1,75 @@
-header{
-height: 300px;
-  
-}
-
-body{
+body {
+    font-family: Arial, sans-serif;
     text-align: center;
     background-color: lightgrey;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    flex-direction: column;
 }
 
-h1{
-font-size: 70px;
-color: green;
+header {
+    height: 150px;
 }
 
-article{
+h1 {
+    font-size: 70px;
+    color: green;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 20px;
+    /* Space for the button to be visible on hover */
+}
+
+.liste_articles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+article {
     height: 500px;
     width: 500px;
+    max-width: 500px;
     margin: 25px;
-    display: block;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border: 2px solid black;
-    
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.show-more-button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+article:hover {
+    background-color: rgba(95, 86, 86, 0.425);
+}
+
+article:hover .show-more-button {
+    display: flex;
 }
