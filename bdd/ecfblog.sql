@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `categorie_id` int DEFAULT NULL,
   PRIMARY KEY (`identifiant`),
   KEY `categorie_id` (`categorie_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `identifiant` int NOT NULL AUTO_INCREMENT,
   `nom_categorie` varchar(255) NOT NULL,
   PRIMARY KEY (`identifiant`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `commentaires` (
   `article_id` int DEFAULT NULL,
   PRIMARY KEY (`identifiant`),
   KEY `article_id` (`article_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Contraintes pour les tables déchargées
