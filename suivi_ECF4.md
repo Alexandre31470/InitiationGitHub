@@ -11,5 +11,7 @@
 *** 21.05 créer la page d'accueil
 
 <!-- ERWAN -->
+*** 21.05 création du formulaire d'ajout d'articles | Fait
+
 
 <!-- FLORIAN -->
