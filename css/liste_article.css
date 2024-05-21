@@ -48,8 +48,8 @@ article {
     justify-content: center;
     flex-direction: column;
     border: 2px solid black;
+    border-radius: 15px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
 }
@@ -68,6 +68,8 @@ article {
 
 article:hover {
     background-color: rgba(95, 86, 86, 0.425);
+    box-shadow: 5px 5px 8px 6px black;
+    transition-duration: 1s;
 }
 
 article:hover .show-more-button {
