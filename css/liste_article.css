@@ -1,0 +1,27 @@
+header{
+height: 300px;
+  
+}
+
+body{
+    text-align: center;
+    background-color: lightgrey;
+
+}
+
+h1{
+font-size: 70px;
+color: green;
+}
+
+article{
+    height: 500px;
+    width: 500px;
+    margin: 25px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid black;
+    
+}
