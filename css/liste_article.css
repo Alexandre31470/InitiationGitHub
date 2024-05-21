@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: lightgrey;
+    background-color: #e7c81746 ;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -17,7 +17,7 @@ header {
 
 h1 {
     font-size: 70px;
-    color: green;
+   
 }
 
 h2 {
@@ -60,7 +60,7 @@ article {
     align-items: center;
     position: absolute;
     padding: 10px 20px;
-    background-color: #5cb85c;
+    background-color: #7c7c7c;
     color: white;
     border-radius: 4px;
     cursor: pointer;
@@ -69,10 +69,13 @@ article {
 article:hover {
     background-color: rgba(95, 86, 86, 0.425);
     box-shadow: 5px 5px 8px 6px black;
-    transition-duration: 1s;
+    transition-duration: 0.8s;
 }
 
 article:hover .show-more-button {
     display: flex;
 }
 
+button{
+    background-color: blue;
+}
