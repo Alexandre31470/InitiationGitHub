@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 21 mai 2024 à 08:58
+-- Généré le : mar. 21 mai 2024 à 21:28
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `articles`;
 CREATE TABLE IF NOT EXISTS `articles` (
   `identifiant` int NOT NULL AUTO_INCREMENT,
-  `titre` varchar(255) NOT NULL,
-  `contenu` text NOT NULL,
-  `auteur` varchar(255) NOT NULL,
+  `titre` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `contenu` text COLLATE utf8mb4_general_ci NOT NULL,
+  `auteur` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `date_creation` datetime DEFAULT CURRENT_TIMESTAMP,
   `categorie_id` int DEFAULT NULL,
   PRIMARY KEY (`identifiant`),
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `identifiant` int NOT NULL AUTO_INCREMENT,
-  `nom_categorie` varchar(255) NOT NULL,
+  `nom_categorie` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`identifiant`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -61,12 +61,29 @@ CREATE TABLE IF NOT EXISTS `categories` (
 DROP TABLE IF EXISTS `commentaires`;
 CREATE TABLE IF NOT EXISTS `commentaires` (
   `identifiant` int NOT NULL AUTO_INCREMENT,
-  `auteur_commentaire` varchar(255) NOT NULL,
-  `contenu` text NOT NULL,
+  `auteur_commentaire` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `contenu` text COLLATE utf8mb4_general_ci NOT NULL,
   `date_creation` datetime DEFAULT CURRENT_TIMESTAMP,
   `article_id` int DEFAULT NULL,
   PRIMARY KEY (`identifiant`),
   KEY `article_id` (`article_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateurs`
+--
+
+DROP TABLE IF EXISTS `utilisateurs`;
+CREATE TABLE IF NOT EXISTS `utilisateurs` (
+  `identifiant` int NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `prenom` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `pseudo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `mail` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `mdp` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`identifiant`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
