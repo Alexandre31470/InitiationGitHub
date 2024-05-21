@@ -3,7 +3,7 @@
 
 
 <!-- ALEXANDRE -->
-*** 21.05
+*** 21.05 Création de la page des articles
 
 
 <!-- BARBARA -->
