@@ -28,7 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Exécuter la requête SQL
         $stmt->execute();
 
-        echo "Article ajouté avec succès.";
+        // Rediriger vers la page de confirmation
+        header("Location: confirmation.php");
+        exit();
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
     }
