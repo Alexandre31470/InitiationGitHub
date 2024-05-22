@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #e7c81746 ;
+    background-color: whitesmoke ;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -26,7 +26,7 @@ h2 {
 
 p {
     margin: 20px;
-    /* Space for the button to be visible on hover */
+    
 }
 
 .liste_articles {
@@ -60,8 +60,8 @@ article {
     align-items: center;
     position: absolute;
     padding: 10px 20px;
-    background-color: #7c7c7c;
-    color: white;
+    background-color: rgba(193, 248, 161, 0.692);
+    color: black;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -76,6 +76,3 @@ article:hover .show-more-button {
     display: flex;
 }
 
-button{
-    background-color: blue;
-}
