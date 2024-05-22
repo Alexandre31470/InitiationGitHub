@@ -19,7 +19,8 @@ body {
 }
 
 h2 {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
 label {
@@ -45,16 +46,39 @@ textarea {
 }
 
 button {
-    width: 100%;
+    width: 40%;
     padding: 10px;
-    background-color: #e73a76;
     border: none;
     border-radius: 4px;
     color: white;
-    font-size: 16px;
+    font-size: large;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.greenBTN {
+    background-color: #4cae4c;
+}
+
+.redBTN {
+    background-color: crimson;
 }
 
 button:hover {
-    background-color: #4cae4c;
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+button:hover p {
+    transform: scale(1.1);
+}
+
+.flex-btn {
+    display: flex;
+    justify-content: space-between;
 }

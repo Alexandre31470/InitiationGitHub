@@ -169,8 +169,3 @@ nav a:active {
 #new-article button:hover {
   background-color: #555;
 }
-
-#new-article button a {
-  text-decoration: none;
-  color: black;
-}
