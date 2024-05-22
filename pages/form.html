@@ -11,12 +11,15 @@
 <body>
     <div class="form-container">
         <h2>Ajouter un Article</h2>
-        <form action="/submit-article" method="post">
+        <form id="article-form" action="/submit-article" method="post" enctype="multipart/form-data">
             <label for="title">Titre de l'Article</label>
             <input type="text" id="title" name="title" required>
 
             <label for="author">Auteur</label>
             <input type="text" id="author" name="author" required>
+
+            <label for="photo">Ajouter une Photo</label>
+            <input type="file" id="photo" name="photo" accept="image/png, image/jpg, image/jpeg" required>
 
             <label for="content">Contenu de l'Article</label>
             <textarea id="content" name="content" rows="10" required></textarea>
@@ -37,6 +40,7 @@
             <button type="submit">Soumettre l'Article</button>
         </form>
     </div>
+    <script src="select_img.js"></script>
 </body>
 
 </html>
