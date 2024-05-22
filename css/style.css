@@ -14,10 +14,123 @@ p {
 }
 
 body {
-  background-color: pink;
+  background-color: f4f4f4;
 }
 
 img {
-  height: 600px;
-  width: 400px;
+  height: 150px;
+  width: 150px;
+}
+
+/* NAVBAR */
+nav {
+  background-color: #333;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ddd;
+}
+
+nav a:active {
+  color: #aaa;
+}
+
+/* Connexion BTN */
+nav li:last-child a {
+  background-color: #e73a76;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+nav li:last-child a:hover {
+  background-color: #555;
+}
+
+nav li:last-child a:active {
+  background-color: #444;
+}
+
+
+/* ARTICLES */
+
+#last_articles {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.article {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.article .text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.article .image img {
+  border-radius: 5px;
+}
+
+.more {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.more a {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.more a:hover {
+  background-color: #555;
+}
+
+/* NOUVEL ARTICLE */
+#new-article {
+  text-align: center;
+  margin-top: 40px; /* Ajuste cet espace si nécessaire */
+}
+
+#new-article button {
+  background-color: #e73a76;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#new-article button:hover {
+  background-color: #555;
 }
