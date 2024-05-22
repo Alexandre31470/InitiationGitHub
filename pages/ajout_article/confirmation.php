@@ -10,10 +10,14 @@
 </head>
 
 <body>
+    <h2>Article ajouté avec succès !</h2>
     <div class="container">
-        <h2>Article ajouté avec succès !</h2>
-        <p>Votre article a été ajouté avec succès sur le site.</p>
-        <a href="ajout_article.html">Ajouter un autre article</a>
+        <button class="greenBTN" onclick="window.location.href='ajout_article.html'">
+            <p>Ajouter un autre article</p>
+        </button>
+        <button type="button" class="redBTN" onclick="window.location.href='../accueil/index.html'">
+            <p>Retour à l'accueil</p>
+        </button>
     </div>
 </body>
 
