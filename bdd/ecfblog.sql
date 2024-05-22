@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 22 mai 2024 à 07:46
+-- Généré le : mer. 22 mai 2024 à 09:51
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -50,8 +50,20 @@ DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id_categorie` int NOT NULL AUTO_INCREMENT,
   `nom_categorie` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`id_categorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  PRIMARY KEY (`id_categorie`),
+  UNIQUE KEY `unique_nom_categorie` (`nom_categorie`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `categories`
+--
+
+INSERT INTO `categories` (`id_categorie`, `nom_categorie`) VALUES
+(9, 'health'),
+(10, 'lifestyle'),
+(13, 'news'),
+(12, 'sports'),
+(11, 'technology');
 
 -- --------------------------------------------------------
 
