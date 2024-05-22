@@ -8,16 +8,23 @@
 </head>
 <body>
     <header>
-        <h1>Mon blog </h1>
+        <h1>Mon blog</h1>
         
         <nav>
             <ul>
-                <li><a href="#news">Actualités</a></li>
-                <li><a href="#technology">Technologies</a></li>
-                <li><a href="#lyfestyle">Mode de vie</a></li>
-                <li><a href="#health">Santé</a></li>
-                <li><a href="#sports">Sport</a></li>
-                <li><a href="login.php">Connexion</a></li>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="nos-articles.php">Nos articles</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Catégories</a>
+                    <div class="dropdown-content">
+                        <a href="#news">Actualités</a>
+                        <a href="#technology">Technologies</a>
+                        <a href="#lyfestyle">Mode de vie</a>
+                        <a href="#health">Santé</a>
+                        <a href="#sports">Sport</a>
+                    </div>
+                </li>
+                <li class="connexion"><a href="login.php">Connexion</a></li>
             </ul>
         </nav>
     </header>
@@ -47,10 +54,8 @@
 
     </main>
 
-
    <footer>
     
    </footer>
 </body>
-
 </html>

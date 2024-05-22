@@ -2,7 +2,7 @@ h1 {
   font-size: 24px;
   color: #333;
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
   margin-bottom: 10px;
 }
 
@@ -14,7 +14,7 @@ p {
 }
 
 body {
-  background-color: f4f4f4;
+  background-color: #f4f4f4;
 }
 
 img {
@@ -34,28 +34,65 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center;
 }
 
 nav li {
-  margin-right: 20px;
+  position: relative;
+  margin-left: 20px;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
+  padding: 10px 20px;
+  display: block;
 }
 
 nav a:hover {
-  color: #ddd;
+  color: #fff; /* Ensure text color remains white */
+  background-color: #e73a76; /* Change background color on hover */
+  border-radius: 5px; /* Add border radius on hover */
 }
 
 nav a:active {
   color: #aaa;
 }
 
+/* Dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px; /* Add border radius to dropdown */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #e73a76;
+}
+
+.dropdown-content a {
+  padding: 10px 20px;
+}
+
+.dropdown-content a:hover {
+  background-color: #e73a76; /* Change background color on hover */
+  color: #fff; /* Ensure text color remains white */
+  border-radius: 5px; /* Add border radius on hover */
+}
+
 /* Connexion BTN */
-nav li:last-child a {
+.connexion a {
   background-color: #e73a76;
   color: #fff;
   padding: 10px 20px;
@@ -63,17 +100,15 @@ nav li:last-child a {
   text-decoration: none;
 }
 
-nav li:last-child a:hover {
+.connexion a:hover {
   background-color: #555;
 }
 
-nav li:last-child a:active {
+.connexion a:active {
   background-color: #444;
 }
 
-
 /* ARTICLES */
-
 #last_articles {
   padding: 20px;
   background-color: #fff;
@@ -112,13 +147,13 @@ nav li:last-child a:active {
 }
 
 .more a:hover {
-  background-color: #555;
+  background-color: #e73a76;
 }
 
 /* NOUVEL ARTICLE */
 #new-article {
   text-align: center;
-  margin-top: 40px; /* Ajuste cet espace si nécessaire */
+  margin-top: 40px; /* Adjust this space if necessary */
 }
 
 #new-article button {
