@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 22 mai 2024 à 07:37
+-- Généré le : mer. 22 mai 2024 à 07:46
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -31,6 +31,7 @@ DROP TABLE IF EXISTS `articles`;
 CREATE TABLE IF NOT EXISTS `articles` (
   `id_article` int NOT NULL AUTO_INCREMENT,
   `titre` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `contenu` text COLLATE utf8mb4_general_ci NOT NULL,
   `auteur` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `date_creation` datetime DEFAULT CURRENT_TIMESTAMP,
