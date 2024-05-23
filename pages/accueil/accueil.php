@@ -3,6 +3,10 @@
 include 'accueil_logic.php';
 ?>
 
+<?php
+require 'accueil.html';
+?>
+
 <?php if (!empty($articles)): ?>
     <?php foreach ($articles as $article): ?>
         <article class="article">
