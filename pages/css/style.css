@@ -112,8 +112,8 @@ nav a:active {
 #last_articles {
   padding: 20px;
   background-color: #fff;
+  margin-bottom: 40px; 
 }
-
 .article {
   display: flex;
   align-items: center;
@@ -122,8 +122,14 @@ nav a:active {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  transition-duration: 0.8s; /* Add transition effect */
 }
 
+.article:hover {
+  background-color: rgba(95, 86, 86, 0.2); /* Modifie la couleur de l'ombre */
+  box-shadow: 5px 5px 8px 6px rgba(0, 0, 0, 0.3); /* Modifie la couleur de l'ombre */
+  transition-duration: 0.8s; /* Ajoute un effet de transition */
+}
 .article .text {
   flex: 1;
   margin-right: 20px;
