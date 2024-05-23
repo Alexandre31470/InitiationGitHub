@@ -1,23 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: whitesmoke ;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    background-color: whitesmoke;
     align-items: center;
     height: auto;
     margin: 0;
-    flex-direction: column;
-}
-
-header {
-    height: 150px;
-}
-
-h1 {
-    font-size: 70px;
-   
 }
 
 h2 {
@@ -26,7 +13,6 @@ h2 {
 
 p {
     margin: 20px;
-    
 }
 
 .liste_articles {
@@ -75,4 +61,3 @@ article:hover {
 article:hover .show-more-button {
     display: flex;
 }
-

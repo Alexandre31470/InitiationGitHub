@@ -1,38 +1,43 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=ecfblog';
-$username = 'root';
-$password = '';
+include 'liste_logic.php';
+?>
 
-try {
-    $pdo = new PDO($dsn, $username, $password);
-    // Définir le mode d'erreur PDO sur Exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Échec de la connexion : " . $e->getMessage());
-}
+<!DOCTYPE html>
+<html lang="fr">
 
-// Les données à insérer
-$titre = "Titre de l'article";
-$contenu = "Contenu de l'article";
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/liste_article.css">
+    <title> Mes Articles</title>
+</head>
 
-try {
-    // Préparer la requête SQL d'insertion
-    $sql = "INSERT INTO articles (titre, contenu) VALUES (:titre, :contenu)";
+<body>
 
-    // Initialiser la requête
-    $stmt = $pdo->prepare($sql);
+    <?php require_once '../nav/nav.php'; ?>
 
-    // Lier les paramètres
-    $stmt->bindParam(':titre', $titre);
-    $stmt->bindParam(':contenu', $contenu);
+    <h2>Mes articles</h2>
+    <div class="liste_articles">
+        <?php if (!empty($articles)) : ?>
+            <?php foreach ($articles as $article) : ?>
+                <article class="article">
+                    <div class="text">
+                        <h2><?php echo htmlspecialchars($article['title']); ?></h2>
+                        <h3><?php echo htmlspecialchars($article['author']); ?></h3>
+                        <h4><?php echo htmlspecialchars($article['category']); ?></h4>
+                    </div>
+                </article>
+            <?php endforeach; ?>
+        <?php else : ?>
+            <p>Aucun article trouvé.</p>
+        <?php endif; ?>
+    </div>
 
-    // Exécuter la requête
-    $stmt->execute();
+    <footer>
+        <p>&copy; 2024 Mon blog. Tous droits réservés.</p>
+    </footer>
 
-    echo "Nouvel enregistrement créé avec succès";
-} catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
-}
+</body>
 
-// Fermer la connexion
-$pdo = null;
+</html>
