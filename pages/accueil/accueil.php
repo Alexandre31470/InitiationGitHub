@@ -45,7 +45,7 @@ include 'accueil_logic.php';
     </main>
 
     <footer>
-        <p>Coucou c'est moi tchoupi</p>
+        <p>Coucou c'est moi tchoupi !</p>
     </footer>
 </body>
 
