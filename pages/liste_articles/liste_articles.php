@@ -12,19 +12,19 @@ try {
 }
 
 // Les données à insérer
-$titre = "Titre de l'article";
-$contenu = "Contenu de l'article";
+$title = "Titre de l'article";
+$content = "Contenu de l'article";
 
 try {
     // Préparer la requête SQL d'insertion
-    $sql = "INSERT INTO articles (titre, contenu) VALUES (:titre, :contenu)";
+    $sql = "INSERT INTO articles (title, content) VALUES (:title, :content)";
 
     // Initialiser la requête
     $stmt = $pdo->prepare($sql);
 
     // Lier les paramètres
-    $stmt->bindParam(':titre', $titre);
-    $stmt->bindParam(':contenu', $contenu);
+    $stmt->bindParam(':title', $title);
+    $stmt->bindParam(':content', $content);
 
     // Exécuter la requête
     $stmt->execute();
