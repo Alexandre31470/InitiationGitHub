@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 22 mai 2024 à 10:59
+-- Généré le : mer. 22 mai 2024 à 20:40
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -29,16 +29,27 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `articles`;
 CREATE TABLE IF NOT EXISTS `articles` (
-  `id_article` int NOT NULL AUTO_INCREMENT,
-  `titre` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `contenu` text COLLATE utf8mb4_general_ci NOT NULL,
-  `auteur` int NOT NULL,
-  `date_creation` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_categorie` int NOT NULL,
-  PRIMARY KEY (`id_article`),
-  KEY `auteur` (`auteur`),
-  KEY `id_categorie` (`id_categorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `author` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `content` text COLLATE utf8mb4_general_ci NOT NULL,
+  `category` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `articles`
+--
+
+INSERT INTO `articles` (`id`, `title`, `author`, `content`, `category`, `created_at`) VALUES
+(1, 'dfhgdfg', 'fdgdfg', 'dfgdfqhbd', 'technology', '2024-05-22 15:33:08'),
+(2, 'hltjtesrthyrt', 'trnjtgyktue', 'ehnyrftgnjetheryhedthryj,ghkyuituyeghdjngfyhk', 'news', '2024-05-22 16:06:27'),
+(3, 'ghfghtykyuilmio', 'eryhrtujyulkui', 'rtnjyukyzZERG\nDHRFSTUJT7IKOYU8KI\nERGDRDFTYJTYFUFYU\ndfhjytdyjiktjryjk', 'sports', '2024-05-22 16:24:18'),
+(4, 'gjhhgfhgjghjhgjghj', 'gjghjghjhjdjhj', 'jdjhgjjdhgjhjjdgh', 'sports', '2024-05-22 17:43:52'),
+(5, 'ggggggggggggggg', 'ggggggggggggggggggg', 'gggggggggggggggggggggggg', 'technology', '2024-05-22 17:46:49'),
+(6, 'ffffffffffffffffffffffffffff', 'ffffffffffffffffffffffffff', 'fffffffffffffffffffffffffffffff', 'news', '2024-05-22 17:48:02'),
+(7, 'ttttttttttttttttttttttttt', 'ttttttttttttttttttttttttt', 'ttttttttttttttttttttttttttttttt', 'lifestyle', '2024-05-22 17:55:50');
 
 -- --------------------------------------------------------
 
@@ -48,77 +59,68 @@ CREATE TABLE IF NOT EXISTS `articles` (
 
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
-  `id_categorie` int NOT NULL AUTO_INCREMENT,
-  `nom_categorie` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`id_categorie`),
-  UNIQUE KEY `nom_categorie` (`nom_categorie`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `categories`
 --
 
-INSERT INTO `categories` (`id_categorie`, `nom_categorie`) VALUES
-(1, 'Health'),
-(2, 'Lifestyle'),
-(4, 'News'),
-(5, 'Sports'),
-(3, 'Technology');
+INSERT INTO `categories` (`id`, `name`) VALUES
+(4, 'health'),
+(3, 'lifestyle'),
+(1, 'news'),
+(5, 'sports'),
+(2, 'technology');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commentaires`
+-- Structure de la table `comments`
 --
 
-DROP TABLE IF EXISTS `commentaires`;
-CREATE TABLE IF NOT EXISTS `commentaires` (
-  `id_commentaire` int NOT NULL AUTO_INCREMENT,
-  `auteur_commentaire` int NOT NULL,
-  `contenu` text COLLATE utf8mb4_general_ci NOT NULL,
-  `date_creation` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_article` int NOT NULL,
-  PRIMARY KEY (`id_commentaire`),
-  KEY `auteur_commentaire` (`auteur_commentaire`),
-  KEY `id_article` (`id_article`)
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `author` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `content` text COLLATE utf8mb4_general_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `article_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `article_id` (`article_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateurs`
+-- Structure de la table `users`
 --
 
-DROP TABLE IF EXISTS `utilisateurs`;
-CREATE TABLE IF NOT EXISTS `utilisateurs` (
-  `id_utilisateur` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `prenom` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `pseudo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `mail` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `mot_de_passe_hash` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`id_utilisateur`),
-  UNIQUE KEY `pseudo` (`pseudo`),
-  UNIQUE KEY `mail` (`mail`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `last_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Contraintes pour les tables déchargées
 --
 
 --
--- Contraintes pour la table `articles`
+-- Contraintes pour la table `comments`
 --
-ALTER TABLE `articles`
-  ADD CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`auteur`) REFERENCES `utilisateurs` (`id_utilisateur`),
-  ADD CONSTRAINT `articles_ibfk_2` FOREIGN KEY (`id_categorie`) REFERENCES `categories` (`id_categorie`);
-
---
--- Contraintes pour la table `commentaires`
---
-ALTER TABLE `commentaires`
-  ADD CONSTRAINT `commentaires_ibfk_1` FOREIGN KEY (`auteur_commentaire`) REFERENCES `utilisateurs` (`id_utilisateur`),
-  ADD CONSTRAINT `commentaires_ibfk_2` FOREIGN KEY (`id_article`) REFERENCES `articles` (`id_article`);
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "";
     $dbname = "ecfblog";
 
     try {
@@ -11,19 +11,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Récupérer les données du formulaire
-        $title = $_POST['title'];
-        $author = $_POST['author'];
-        $content = $_POST['content'];
-        $category = $_POST['category'];
+        $titre = $_POST['titre'];
+        $auteur = $_POST['auteur'];
+        $contenu = $_POST['contenu'];
+        $categorie = $_POST['categorie'];
 
         // Préparer la requête SQL pour insérer un nouvel article dans la base de données
-        $stmt = $conn->prepare("INSERT INTO articles (title, author, content, category) VALUES (:title, :author, :content, :category)");
+        $stmt = $conn->prepare("INSERT INTO articles (titre, auteur, contenu, id_categorie) VALUES (:titre, :auteur, :contenu, :id_categorie)");
 
         // Lier les paramètres de la requête avec les valeurs du formulaire
-        $stmt->bindParam(':title', $title);
-        $stmt->bindParam(':author', $author);
-        $stmt->bindParam(':content', $content);
-        $stmt->bindParam(':category', $category);
+        $stmt->bindParam(':titre', $titre);
+        $stmt->bindParam(':auteur', $auteur);
+        $stmt->bindParam(':contenu', $contenu);
+        $stmt->bindParam(':id_categorie', $categorie);
 
         // Exécuter la requête SQL
         $stmt->execute();
