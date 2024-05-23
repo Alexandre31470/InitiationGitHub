@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Réinitialiser le mot de passe</title>
-    <link rel="stylesheet" href="/phpAfpa2024/groupe_N2_Ecf4/public/css/styles.css">
+    <link rel="stylesheet" href="../../public/css/styles.css">
 </head>
 <body>
     <form action="../../traitement_reset_password.php" method="post">

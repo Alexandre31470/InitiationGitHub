@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Inscription</title>
-    <link rel="stylesheet" href="/phpAfpa2024/GROUPE_N2_ECF4/public/css/styles.css">
+    <link rel="stylesheet" href="../../public/css/styles.css">
 </head>
 <body>
     <form action="../../traitement_inscription.php" method="post">
