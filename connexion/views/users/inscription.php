@@ -8,7 +8,14 @@
 <body>
     <form action="../../traitement_inscription.php" method="post">
         <h2>Inscription</h2>
-        <?php if (isset($_GET['error'])) { echo "<p style='color:red;'>{$_GET['error']}</p>"; } ?>
+        <?php 
+        if (isset($_GET['error'])) {
+            echo "<p style='color:red;'>{$_GET['error']}</p>";
+        }
+        if (isset($_GET['success']) && $_GET['success'] == 1) {
+            echo "<p style='color:green;'>Inscription réussie ! Veuillez vous connecter.</p>";
+        }
+        ?>
         
         <label for="nom">Nom:</label>
         <input type="text" id="nom" name="nom" required>
@@ -29,4 +36,5 @@
     </form>
 </body>
 </html>
+
 

@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute([$nom, $prenom, $pseudo, $mail, $mdp_hashed]);
 
         // Redirection vers la page de connexion après succès
-        header('Location: views/users/pageconnexion.php?success=1');
+        header('Location: pageconnexion.php?success=1');
         exit();
     } catch (PDOException $e) {
         header('Location: views/users/inscription.php?error=Erreur lors de l\'inscription');

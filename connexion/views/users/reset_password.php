@@ -8,7 +8,14 @@
 <body>
     <form action="../../traitement_reset_password.php" method="post">
         <h2>Réinitialiser le mot de passe</h2>
-        <?php if (isset($_GET['error'])) { echo "<p style='color:red;'>{$_GET['error']}</p>"; } ?>
+        <?php 
+        if (isset($_GET['error'])) {
+            echo "<p style='color:red;'>{$_GET['error']}</p>";
+        }
+        if (isset($_GET['success']) && $_GET['success'] == 2) {
+            echo "<p style='color:green;'>Mot de passe réinitialisé avec succès ! Veuillez vous connecter.</p>";
+        }
+        ?>
         
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
@@ -20,4 +27,3 @@
     </form>
 </body>
 </html>
-
