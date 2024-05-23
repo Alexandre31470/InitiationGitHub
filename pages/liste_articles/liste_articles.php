@@ -1,15 +1,9 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=ecfblog';
-$username = 'root';
-$password = '';
+include 'liste_logic.php';
+?>
 
-try {
-    $pdo = new PDO($dsn, $username, $password);
-    // Définir le mode d'erreur PDO sur Exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Échec de la connexion : " . $e->getMessage());
-}
+<!DOCTYPE html>
+<html lang="fr">
 
 // Les données à insérer
 $title = "Titre de l'article";
@@ -34,5 +28,4 @@ $content = "Contenu de l'article";
 //     echo "Erreur : " . $e->getMessage();
 // }
 
-// Fermer la connexion
-$pdo = null;
+</html>

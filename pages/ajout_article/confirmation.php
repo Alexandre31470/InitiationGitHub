@@ -7,9 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmation</title>
     <link rel="stylesheet" href="../css/ajout_article.css">
+    <link rel="stylesheet" href="../css/nav.css">
 </head>
 
 <body>
+
+<?php require_once '../nav/nav.php'; ?>
+
     <h2>Article ajouté avec succès !</h2>
     <div class="container">
         <button class="greenBTN" onclick="window.location.href='ajout_article.html'">
