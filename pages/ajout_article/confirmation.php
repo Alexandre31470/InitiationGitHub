@@ -15,7 +15,7 @@
         <button class="greenBTN" onclick="window.location.href='ajout_article.html'">
             <p>Ajouter un autre article</p>
         </button>
-        <button type="button" class="redBTN" onclick="window.location.href='../accueil/accueil.html'">
+        <button type="button" class="redBTN" onclick="window.location.href='../accueil/accueil.php'">
             <p>Retour à l'accueil</p>
         </button>
     </div>
