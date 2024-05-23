@@ -3,13 +3,6 @@
 include 'accueil_logic.php';
 ?>
 
-<<<<<<< HEAD
-<?php
-require 'accueil.html';
-?>
-
-<?php if (!empty($articles)): ?>
-=======
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -48,7 +41,6 @@ require 'accueil.html';
         <section id="last_articles">
             <h2>Derniers articles</h2>
             <?php if (!empty($articles)): ?>
->>>>>>> 5c3e284f65ef017104f656890fadd24eca46473c
     <?php foreach ($articles as $article): ?>
         <article class="article">
             <div class="text">
