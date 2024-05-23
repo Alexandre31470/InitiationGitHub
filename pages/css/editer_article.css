@@ -1,0 +1,76 @@
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin: 20px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.actions button {
+    background-color: #e73a76;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.actions button:hover {
+    background-color: #555;
+}
+
+.formulaire-edition form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulaire-edition label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.formulaire-edition textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-buttons {
+    text-align: right;
+}
+
+.form-buttons button {
+    background-color: #e73a76;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.form-buttons button:hover {
+    background-color: #555;
+}
