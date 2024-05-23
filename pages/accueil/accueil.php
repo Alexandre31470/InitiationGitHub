@@ -20,7 +20,7 @@ include 'accueil_logic.php';
 
         <nav>
             <ul>
-                <li><a href="../accueil/accueil.html">Accueil</a></li>
+                <li><a href="../accueil/accueil.php">Accueil</a></li>
                 <li><a href="../liste_articles/liste_articles.html">Nos articles</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Catégories</a>
@@ -40,18 +40,18 @@ include 'accueil_logic.php';
     <main>
         <section id="last_articles">
             <h2>Derniers articles</h2>
-            <?php if (!empty($articles)): ?>
-    <?php foreach ($articles as $article): ?>
-        <article class="article">
-            <div class="text">
-                <h3><?php echo htmlspecialchars($article['title']); ?></h3>
-                <p><?php echo htmlspecialchars($article['content']); ?></p>
-            </div>
-        </article>
-    <?php endforeach; ?>
-<?php else: ?>
-    <p>Aucun article trouvé.</p>
-<?php endif; ?>
+            <?php if (!empty($articles)) : ?>
+                <?php foreach ($articles as $article) : ?>
+                    <article class="article">
+                        <div class="text">
+                            <h3><?php echo htmlspecialchars($article['title']); ?></h3>
+                            <p><?php echo htmlspecialchars($article['content']); ?></p>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            <?php else : ?>
+                <p>Aucun article trouvé.</p>
+            <?php endif; ?>
             <div class="more">
                 <a href="../liste_articles/liste_articles.html">Voir plus</a>
             </div>
