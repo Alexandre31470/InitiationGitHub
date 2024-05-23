@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
     <header>
         <h1>Mon blog</h1>
-        
+
         <nav>
             <ul>
                 <li><a href="../accueil/accueil.html">Accueil</a></li>
@@ -33,30 +35,21 @@
     <main>
         <section id="last_articles">
             <h2>Derniers articles</h2>
-            <article class="article">
-                <div class="text">
-                    <h3>Article 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non urna nec nisl bibendum interdum.</p>
-                </div>
-                <div class="image">
-                    <img src="https://via.placeholder.com/150" alt="Image de l'article 1">
-                </div>
-            </article>
-
+            <?php include 'accueil.php'; ?>
             <div class="more">
                 <a href="../liste_articles/liste_articles.html">Voir plus</a>
             </div>
-
         </section>
 
         <section id="new-article">
-            <button type="button" onclick="window.location.href='../ajout_article/ajout_article.html'">Créer un nouvel article</button>
+            <button type="button" onclick="window.location.href='../ajout_article/ajout_article.html'">Créer un nouvel
+                article</button>
         </section>
-
     </main>
 
-   <footer>
-    
-   </footer>
+    <footer>
+        <!-- Contenu du pied de page -->
+    </footer>
 </body>
+
 </html>
