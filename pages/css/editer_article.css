@@ -6,6 +6,7 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* BOUTONS */
 .actions button {
     background-color: #e73a76;
     color: #fff;
@@ -21,6 +22,7 @@ section {
     background-color: #555;
 }
 
+/* FORMULAIRE */
 .formulaire-edition form {
     display: flex;
     flex-direction: column;

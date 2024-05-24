@@ -18,6 +18,7 @@ $user = $stmt->fetch();
 <head>
     <meta charset="UTF-8">
     <title>Profil</title>
+    <link rel="stylesheet" href="../../../pages/css/style.css">
     <link rel="stylesheet" href="/phpAfpa2024/GROUPE_N2_ECF4/public/css/styles.css">
 </head>
 

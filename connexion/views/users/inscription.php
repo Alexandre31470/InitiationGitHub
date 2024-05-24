@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Inscription</title>
+    <link rel="stylesheet" href="../../../pages/css/style.css">
     <link rel="stylesheet" href="../../public/css/styles.css">
 </head>
 

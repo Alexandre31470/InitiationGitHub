@@ -3,6 +3,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    z-index: 0;
 }
 
 article {
@@ -22,6 +23,11 @@ article {
     transition: background-color 0.8s, box-shadow 0.8s;
     overflow: hidden;
     position: relative;
+    z-index: 1;
+}
+
+article h2 {
+    color: #8A3D7B;
 }
 
 .show-more-button {
@@ -34,6 +40,7 @@ article {
     color: black;
     border-radius: 4px;
     cursor: pointer;
+    z-index: 2;
 }
 
 article:hover {

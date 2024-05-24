@@ -52,7 +52,7 @@ include 'accueil_logic.php';
 </body>
 
 <footer>
-    <p>&copy; <?php echo date("Y"); ?> Mon Blog. Tous droits réservés.</p>
+    <p>&copy; <?php echo date("Y"); ?> Notre super Blog. Tous droits réservés à La Team.</p>
 </footer>
 
 </html>
