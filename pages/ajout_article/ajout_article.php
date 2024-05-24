@@ -5,44 +5,43 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $servername = "localhost";
+// Activer le reporting des erreurs
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+try {
+    $dsn = "mysql:host=localhost;dbname=ecfblog;charset=utf8";
     $username = "root";
     $password = "";
-    $dbname = "ecfblog";
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => false,
+    ];
 
-    try {
-        // Connexion à la base de données MySQL via PDO
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO($dsn, $username, $password, $options);
 
-        // Récupérer les données du formulaire
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $title = $_POST['title'];
-        $author = $_POST['author'];
         $content = $_POST['content'];
         $category = $_POST['category'];
+        $author = $_SESSION['pseudo']; // Utiliser le pseudo de l'utilisateur connecté
 
-        // Préparer la requête SQL pour insérer un nouvel article dans la base de données
-        $stmt = $conn->prepare("INSERT INTO articles (title, author, content, category) VALUES (:title, :author, :content, :category)");
+        $stmt = $pdo->prepare("INSERT INTO articles (title, content, category, author) VALUES (:title, :content, :category, :author)");
+        $stmt->execute([
+            'title' => $title,
+            'content' => $content,
+            'category' => $category,
+            'author' => $author
+        ]);
 
-        // Lier les paramètres de la requête avec les valeurs du formulaire
-        $stmt->bindParam(':title', $title);
-        $stmt->bindParam(':author', $author);
-        $stmt->bindParam(':content', $content);
-        $stmt->bindParam(':category', $category);
-
-        // Exécuter la requête SQL
-        $stmt->execute();
-
-        // Rediriger vers la page de confirmation
-        header("Location: confirmation.php");
-        exit();
-    } catch (PDOException $e) {
-        echo "Erreur : " . $e->getMessage();
+        // Rediriger vers la liste des articles après l'ajout
+        header("Location: ../liste_articles/liste_articles.php");
+        exit;
     }
-
-    // Fermer la connexion à la base de données
-    $conn = null;
-} else {
-    echo "Erreur : la requête n'est pas de type POST.";
+} catch (PDOException $e) {
+    echo "Erreur de connexion : " . $e->getMessage();
+    die();
 }
+?>

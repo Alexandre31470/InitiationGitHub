@@ -88,7 +88,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         </div>
                     </li>
                     <?php if (isset($_SESSION['user_id'])) : ?>
-                        <li><a href="../ajout_article/ajout_article.php">Ajouter un article</a></li>
+                        <li><a href="../ajout_article/template_ajout_article.php">Ajouter un article</a></li>
                         <li class="deconnexion"><a href="../../connexion/deconnexion.php">Déconnexion</a></li>
                     <?php else : ?>
                         <li class="connexion"><a href="../../connexion/pageconnexion.php">Connexion</a></li>

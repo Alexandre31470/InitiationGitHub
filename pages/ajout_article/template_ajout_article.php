@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../../connexion/views/users/connexion.php");
+    exit;
+}
+
+// Si l'utilisateur est connecté, afficher le formulaire d'ajout d'article
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -20,9 +30,6 @@
             <form id="article-form" action="ajout_article.php" method="post">
                 <label for="title">Titre de l'Article</label>
                 <input type="text" id="title" name="title" required>
-
-                <label for="author">Auteur</label>
-                <input type="text" id="author" name="author" required>
 
                 <label for="content">Contenu de l'Article</label>
                 <textarea id="content" name="content" rows="10" required></textarea>

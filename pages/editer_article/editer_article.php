@@ -24,9 +24,6 @@
             <label for="title">Titre de l'Article</label>
             <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($article['title']); ?>" required>
 
-            <label for="author">Auteur</label>
-            <input type="text" id="author" name="author" value="<?php echo htmlspecialchars($article['author']); ?>" required>
-
             <label for="content">Contenu de l'Article</label>
             <textarea id="content" name="content" rows="10" required><?php echo htmlspecialchars($article['content']); ?></textarea>
 
@@ -49,9 +46,7 @@
     </section>
 
     <footer>
-        <p>&copy;
-            <?php echo date("Y"); ?> Mon Blog. Tous droits réservés.
-        </p>
+        <p>&copy; <?php echo date("Y"); ?> Mon Blog. Tous droits réservés.</p>
     </footer>
 
 </body>
