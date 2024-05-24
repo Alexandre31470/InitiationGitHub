@@ -1,16 +1,18 @@
 <!-- A FAIRE -->
 Page d'accueil :
-Afficher un extrait des articles sur la page d'accueil et rendre l'article cliquable puis mettre le tout en ligne et pas en colonne 
-Css sur page d'accueil pour uniformiser les pages
-nav.php voir pour intégrer le footer dedans ( pourquoi on utilise un fichier .php et pas html) créer un footer et insérer un logo pour le blog 
+X | Afficher un extrait des articles sur la page d'accueil
+X | rendre l'article cliquable
+X | mettre le tout en ligne et pas en colonne 
+X | Css sur page d'accueil pour uniformiser les pages
+X | créer un footer et insérer un logo pour le blog 
 
 Navbar menu déroulant des catégories :
 rendre chaque catégorie cliquable et trier  par la catégorie cliquée.
 
 Page Nos articles: 
-Uniformiser en faisant un template du header ( voir si possible intégrer header/nav/et footer)
-Uniformiser le background color et shadow des articles avec la page d'accueil
-Rendre chaque article cliquable et lier à la page du détail de l'article 
+X | Uniformiser en faisant un template du header ( voir si possible intégrer header/nav/et footer)
+X | Uniformiser le background color et shadow des articles avec la page d'accueil
+X | Rendre chaque article cliquable et lier à la page du détail de l'article 
 
 Page détail des articles:
 Ajouter la navbar à la page 
@@ -38,6 +40,7 @@ Création d'un formulaire d'inscription et d'authentification
 Accès limité aux membres inscrits pour ajouter un article ou commentaire
 Limiter la modification d'un publication à son auteur.
 Télécharger des articles et photos pour agrémenter le blog.
+
 
 <!-- ALEXANDRE -->
 *** 21.05 Création de la page des articles

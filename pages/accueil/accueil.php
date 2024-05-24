@@ -13,21 +13,24 @@ include 'accueil_logic.php';
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/nav.css">
-</head>
+    <link rel="stylesheet" href="../css/accueil.css" </head>
 
 <body>
     <?php require_once '../nav/nav.php'; ?>
 
     <main>
+        <h2>Derniers articles</h2>
+
         <section id="last_articles">
-            <h2>Derniers articles</h2>
             <?php if (!empty($articles)) : ?>
                 <?php foreach ($articles as $article) : ?>
                     <article class="article">
-                        <div class="text">
-                            <h3><?php echo htmlspecialchars($article['title']); ?></h3>
-                            <p><?php echo htmlspecialchars($article['content']); ?></p>
-                        </div>
+                        <a href="../detail_article/detail_article.html">
+                            <div class="text">
+                                <h3><?php echo htmlspecialchars($article['title']); ?></h3>
+                                <p><?php echo htmlspecialchars($article['content']); ?></p>
+                            </div>
+                        </a>
                     </article>
                 <?php endforeach; ?>
             <?php else : ?>
@@ -36,17 +39,20 @@ include 'accueil_logic.php';
             <div class="more">
                 <a href="../liste_articles/liste_articles.php">Voir plus</a>
             </div>
+
+            <section id="new-article">
+                <button type="button" onclick="window.location.href='../ajout_article/template_ajout_article.php'">Créer un nouvel
+                    article</button>
+            </section>
+
         </section>
 
-        <section id="new-article">
-            <button type="button" onclick="window.location.href='../ajout_article/template_ajout_article.php'">Créer un nouvel
-                article</button>
-        </section>
     </main>
 
-    <footer>
-        <p>Coucou c'est moi tchoupi !</p>
-    </footer>
 </body>
+
+<footer>
+    <p>&copy; <?php echo date("Y"); ?> Mon Blog. Tous droits réservés.</p>
+</footer>
 
 </html> 

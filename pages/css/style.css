@@ -1,13 +1,10 @@
 body {
-  background-color: #f4f4f4;
-}
-
-h1 {
-  font-size: 24px;
+  font-family: Arial, sans-serif;
   color: #333;
-  font-weight: bold;
-  text-decoration: none;
-  margin-bottom: 10px;
+  background-color: #fff;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 p {
@@ -17,92 +14,29 @@ p {
   margin-bottom: 20px;
 }
 
-img {
-  height: 150px;
-  width: 150px;
+/* FOOTER */
+footer {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 20px 0;
+  clear: both;
 }
 
-/* Connexion BTN */
-.connexion a {
-  background-color: #e73a76;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.connexion a:hover {
-  background-color: #555;
-}
-
-.connexion a:active {
-  background-color: #444;
-}
-
-/* ARTICLES */
-#last_articles {
-  padding: 20px;
-  background-color: #fff;
-  margin-bottom: 40px; 
-}
-.article {
-  display: flex;
-  align-items: center;
+h2 {
   margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  transition-duration: 0.8s; /* Add transition effect */
 }
 
-.article:hover {
-  background-color: rgba(95, 86, 86, 0.2); /* Modifie la couleur de l'ombre */
-  box-shadow: 5px 5px 8px 6px rgba(0, 0, 0, 0.3); /* Modifie la couleur de l'ombre */
-  transition-duration: 0.8s; /* Ajoute un effet de transition */
-}
-.article .text {
-  flex: 1;
-  margin-right: 20px;
-}
-
-.article .image img {
-  border-radius: 5px;
-}
-
-.more {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.more a {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
+h1 {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
   text-decoration: none;
-  border-radius: 5px;
 }
 
-.more a:hover {
-  background-color: #e73a76;
-}
-
-/* NOUVEL ARTICLE */
-#new-article {
-  text-align: center;
-  margin-top: 40px;
-}
-
-#new-article button {
-  background-color: #e73a76;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#new-article button:hover {
-  background-color: #555;
+a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
