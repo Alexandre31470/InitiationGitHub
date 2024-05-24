@@ -55,8 +55,9 @@
     text-align: center;
     margin-top: 20px;
     width: 100%;
-    /* Makes sure the "Voir plus" button takes full width */
-  }
+    display: flex;
+    justify-content: center;
+   }
 
   .more a {
     background-color: #333;
