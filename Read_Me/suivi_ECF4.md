@@ -15,7 +15,7 @@ X | Uniformiser le background color et shadow des articles avec la page d'accuei
 X | Rendre chaque article cliquable et lier à la page du détail de l'article 
 
 Page détail des articles:
-Ajouter la navbar à la page 
+X | Ajouter la navbar à la page 
 Lier le bouton modifier à la page d'édition de l'article et à une page php qui permet d'extraire et afficher dans la page éditer l'article les champs de l'article concerné depuis la table article de la bdd.
 Bouton supprimer le lier à une page php qui supprime la publication et les commentaires de la bdd .
 Gérer les commentaires en php pour les générer depuis la bdd.
@@ -28,7 +28,8 @@ Section contenu de l'article bouton mettre à jour doit être lié à un php qui
 Bonus: Ajouter la zone titre , la zone auteur , les catégories et date de création ( voir si réutilisation possible d'une partie du code de la page ajout_article.php) 
 Le bouton annuler doit renvoyer à la page de détail de l'article.
 
-Page ajout article : pour le template_ajout_article.php il faut uniformiser le header la nav et le footer la couleur des boutons ,
+Page ajout article :
+pour le template_ajout_article.php il faut uniformiser le header la nav et le footer la couleur des boutons ,
  remplacer l'animation des boutons par un hover.
 
 Page de confirmation :

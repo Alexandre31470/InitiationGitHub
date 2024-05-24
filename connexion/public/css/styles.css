@@ -40,7 +40,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 button {
     padding: 10px;
-    background-color: #007BFF;
+    background-color: #e73a76;
     border: none;
     border-radius: 4px;
     color: white;
@@ -49,14 +49,16 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #555;
 }
 
 a {
     display: block;
     text-align: center;
     margin-top: 10px;
-    color: #007BFF;
+    color: #555;
+    text-decoration: none;
+
 }
 
 a:hover {
