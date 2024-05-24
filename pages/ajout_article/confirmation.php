@@ -12,7 +12,7 @@
 
 <body>
 
-<?php require_once '../nav/nav.php'; ?>
+    <?php require_once '../nav/nav.php'; ?>
 
     <h2>Article ajouté avec succès !</h2>
     <div class="container">

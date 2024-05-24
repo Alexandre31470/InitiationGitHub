@@ -21,4 +21,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: views/users/profil.php?error=Erreur lors de la mise à jour du profil');
     }
 }
-?>

@@ -1,5 +1,8 @@
+<?php include 'detail_article_logic.php'; ?>
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +10,31 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/details.css">
+    <link rel="stylesheet" href="../css/nav.css">
 </head>
-<body>
-    <header>
-        <h1>Détail de l'article</h1>
-    </header>
 
+<body>
+    <?php require_once '../nav/nav.php'; ?>
     <main>
+
+        <section id="article">
+            <?php if (!empty($article)) : ?>
+                <article class="article">
+                    <div class="text">
+                        <h2><?php echo htmlspecialchars($article['title']); ?></h2>
+                        <h3><?php echo htmlspecialchars($article['author']); ?></h3>
+                        <h4><?php echo htmlspecialchars($article['category']); ?></h4>
+                        <p><?php echo htmlspecialchars($article['content']); ?></p>
+                    </div>
+                </article>
+            <?php else : ?>
+                <p>Aucun article trouvé.</p>
+            <?php endif; ?>
+        </section>
+
         <section id="actions">
             <button>Modifier</button>
             <button>Supprimer la publication et les commentaires</button>
-        </section>
-
-        <section id="article">
-            <h2>Titre de l'article</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non urna nec nisl bibendum interdum. Suspendisse potenti. Sed nec ligula a lacus venenatis interdum. Nam eu eros et dolor tristique mollis.</p>
         </section>
 
         <section id="commentaire">
@@ -45,9 +58,9 @@
             </form>
         </section>
     </main>
-
     <footer>
         <p>&copy; <?php echo date("Y"); ?> Mon Blog. Tous droits réservés.</p>
     </footer>
-    </body>
+</body>
+
 </html>

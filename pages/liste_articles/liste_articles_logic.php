@@ -18,7 +18,7 @@ try {
     $pdo = new PDO($dsn, $username, $password, $options);
 
     // Prépare et exécute la requête
-    $stmt = $pdo->query("SELECT id, title, content FROM articles ORDER BY created_at DESC LIMIT 3");
+    $stmt = $pdo->query("SELECT id, title, author, content, category FROM articles ORDER BY created_at");
 
     // Récupère les résultats
     $articles = $stmt->fetchAll();

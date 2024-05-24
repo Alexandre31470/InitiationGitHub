@@ -1,14 +1,17 @@
 <?php
 require_once '../models/User.php';
 
-class UserController {
+class UserController
+{
     private $userModel;
 
-    public function __construct($pdo) {
+    public function __construct($pdo)
+    {
         $this->userModel = new User($pdo);
     }
 
-    public function register() {
+    public function register()
+    {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $nom = htmlspecialchars($_POST['nom']);
             $prenom = htmlspecialchars($_POST['prenom']);
@@ -38,7 +41,8 @@ class UserController {
         }
     }
 
-    public function login() {
+    public function login()
+    {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $email = htmlspecialchars($_POST['email']);
             $password = htmlspecialchars($_POST['password']);
@@ -62,7 +66,8 @@ class UserController {
         }
     }
 
-    public function resetPassword() {
+    public function resetPassword()
+    {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $email = htmlspecialchars($_POST['email']);
             $new_password = htmlspecialchars($_POST['new_password']);
@@ -89,4 +94,3 @@ class UserController {
         }
     }
 }
-?>

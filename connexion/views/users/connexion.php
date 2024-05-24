@@ -5,11 +5,13 @@ if (session_status() === PHP_SESSION_NONE) {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
     <link rel="stylesheet" href="../../public/css/styles.css">
 </head>
+
 <body>
     <form action="../../traitement_connexion.php" method="post">
         <h2>Connexion</h2>
@@ -37,7 +39,5 @@ if (session_status() === PHP_SESSION_NONE) {
         <a href="inscription.php">Créer un compte</a>
     </form>
 </body>
+
 </html>
-
-
-
