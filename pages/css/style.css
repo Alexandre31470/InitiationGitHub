@@ -1,13 +1,10 @@
 body {
-  background-color: #f4f4f4;
-}
-
-h1 {
-  font-size: 24px;
+  font-family: Arial, sans-serif;
   color: #333;
-  font-weight: bold;
-  text-decoration: none;
-  margin-bottom: 10px;
+  background-color: #fff;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 p {
@@ -17,128 +14,29 @@ p {
   margin-bottom: 20px;
 }
 
-img {
-  height: 150px;
-  width: 150px;
-}
-
-/* Connexion BTN */
-.connexion a {
-  background-color: #e73a76;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.connexion a:hover {
-  background-color: #555;
-}
-
-.connexion a:active {
-  background-color: #444;
-}
-
-/* ARTICLES */
-#last_articles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  background-color: #fff;
-  margin-bottom: 40px; 
-}
-
-.article {
-  flex: 1 1 calc(33.33% - 20px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  transition: background-color 0.8s, box-shadow 0.8s; /* Add transition effect */
-}
-
-.article:hover {
-  background-color: rgba(95, 86, 86, 0.2); /* Modifie la couleur de l'ombre */
-  box-shadow: 5px 5px 8px 6px rgba(0, 0, 0, 0.3); /* Modifie la couleur de l'ombre */
-}
-
-.article .text {
-  width: 100%;
-}
-
-.article .image img {
-  border-radius: 5px;
-  width: 100%; /* Makes sure images are responsive and fit the article */
-}
-
-/* Box article cliquable */
-.article a {
-  display: block;
-  color: inherit; 
-  text-decoration: none; 
-}
-
-.article a:hover {
-  text-decoration: none; 
-}
-
-.article a h3,
-.article a p {
-  text-decoration: none;
-}
-
-/* BOUTON VOIR PLUS */
-.more {
-  text-align: center;
-  margin-top: 20px;
-  width: 100%; /* Makes sure the "Voir plus" button takes full width */
-}
-
-.more a {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.more a:hover {
-  background-color: #e73a76;
-}
-
-/* NOUVEL ARTICLE */
-#new-article {
-  text-align: center;
-  margin-top: 40px;
-  width: 100%; 
-}
-
-#new-article button {
-  background-color: #e73a76;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#new-article button:hover {
-  background-color: #555;
-}
-
-
 /* FOOTER */
 footer {
-  text-align: center; 
-  position: relative; 
-  width: 100%; 
-  background-color: #f4f4f4; 
+  text-align: center;
+  position: relative;
+  width: 100%;
+  background-color: #f4f4f4;
   padding: 20px 0;
-  clear: both; 
+  clear: both;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }

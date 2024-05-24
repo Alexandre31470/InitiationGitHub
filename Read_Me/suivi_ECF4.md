@@ -1,18 +1,18 @@
 <!-- A FAIRE -->
 Page d'accueil :
-Afficher un extrait des articles sur la page d'accueil
+X | Afficher un extrait des articles sur la page d'accueil
 X | rendre l'article cliquable
 X | mettre le tout en ligne et pas en colonne 
-Css sur page d'accueil pour uniformiser les pages
+X | Css sur page d'accueil pour uniformiser les pages
 X | créer un footer et insérer un logo pour le blog 
 
 Navbar menu déroulant des catégories :
 rendre chaque catégorie cliquable et trier  par la catégorie cliquée.
 
 Page Nos articles: 
-Uniformiser en faisant un template du header ( voir si possible intégrer header/nav/et footer)
-Uniformiser le background color et shadow des articles avec la page d'accueil
-Rendre chaque article cliquable et lier à la page du détail de l'article 
+X | Uniformiser en faisant un template du header ( voir si possible intégrer header/nav/et footer)
+X | Uniformiser le background color et shadow des articles avec la page d'accueil
+X | Rendre chaque article cliquable et lier à la page du détail de l'article 
 
 Page détail des articles:
 Ajouter la navbar à la page 

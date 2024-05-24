@@ -13,7 +13,7 @@ include 'accueil_logic.php';
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/nav.css">
-</head>
+    <link rel="stylesheet" href="../css/accueil.css" </head>
 
 <body>
     <?php require_once '../nav/nav.php'; ?>
@@ -39,12 +39,14 @@ include 'accueil_logic.php';
             <div class="more">
                 <a href="../liste_articles/liste_articles.php">Voir plus</a>
             </div>
+
+            <section id="new-article">
+                <button type="button" onclick="window.location.href='../ajout_article/template_ajout_article.php'">Créer un nouvel
+                    article</button>
+            </section>
+
         </section>
 
-        <section id="new-article">
-            <button type="button" onclick="window.location.href='../ajout_article/template_ajout_article.php'">Créer un nouvel
-                article</button>
-        </section>
     </main>
 
 </body>
