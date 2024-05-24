@@ -7,4 +7,3 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Page de backoffice ici
-?>
