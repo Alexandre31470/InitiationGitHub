@@ -33,7 +33,7 @@
         </section>
 
         <section id="actions">
-            <button>Modifier</button>
+            <button><a href="../editer_article/editer_article.php?id=<?php echo $article['id']; ?>">Modifier</a></button>
             <button>Supprimer la publication et les commentaires</button>
         </section>
 

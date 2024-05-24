@@ -5,7 +5,6 @@ if (session_status() === PHP_SESSION_NONE) {
 ?>
 <header>
 
-
     <nav>
         <div class="nav-container">
             <div class="logo">
