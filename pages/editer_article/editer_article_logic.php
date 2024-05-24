@@ -5,7 +5,6 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Activer le reporting des erreurs
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -28,7 +27,7 @@ try {
         $title = isset($_POST['title']) ? $_POST['title'] : '';
         $content = isset($_POST['content']) ? $_POST['content'] : '';
         $category = isset($_POST['category']) ? $_POST['category'] : '';
-        $author = $_SESSION['pseudo']; // Utiliser le pseudo de l'utilisateur connecté
+        $author = $_SESSION['pseudo'];
 
         if ($articleId > 0 && !empty($title) && !empty($content) && !empty($category)) {
             // Prépare et exécute la mise à jour
@@ -72,4 +71,3 @@ try {
     echo "Erreur de connexion : " . $e->getMessage();
     die();
 }
-?>

@@ -82,7 +82,7 @@
     <footer>
         <p>&copy; <?php echo date("Y"); ?> Notre super Blog. Tous droits réservés à La Team.</p>
     </footer>
-    
+
 </body>
 
 </html>

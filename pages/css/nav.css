@@ -3,14 +3,14 @@ nav {
     background-color: #333;
     padding: 1rem;
     position: fixed;
-    z-index: 1000; /* assure que la nav reste en 1er plan */
+    z-index: 1000;
     top: 0;
     left: 0;
     width: 100vw;
 }
 
 body {
-    padding-top: 100px; /* compense la taille de la navbar */
+    padding-top: 100px;
 }
 
 .nav-container {

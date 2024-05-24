@@ -43,7 +43,7 @@ include 'liste_articles_logic.php';
     <footer>
         <p>&copy; <?php echo date("Y"); ?> Notre super Blog. Tous droits réservés à La Team.</p>
     </footer>
-    
+
 </body>
 
 </html>

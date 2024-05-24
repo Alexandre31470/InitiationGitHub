@@ -1,8 +1,8 @@
 <?php
 session_start();
-// Inclure le code de connexion à la base de données et la logique de récupération des articles
 include 'accueil_logic.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 

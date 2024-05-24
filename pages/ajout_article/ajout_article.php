@@ -5,7 +5,6 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Activer le reporting des erreurs
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -26,7 +25,7 @@ try {
         $title = $_POST['title'];
         $content = $_POST['content'];
         $category = $_POST['category'];
-        $author = $_SESSION['pseudo']; // Utiliser le pseudo de l'utilisateur connecté
+        $author = $_SESSION['pseudo'];
 
         $stmt = $pdo->prepare("INSERT INTO articles (title, content, category, author) VALUES (:title, :content, :category, :author)");
         $stmt->execute([
@@ -36,7 +35,6 @@ try {
             'author' => $author
         ]);
 
-        // Rediriger vers la liste des articles après l'ajout
         header("Location: ../liste_articles/liste_articles.php");
         exit;
     }
@@ -44,4 +42,3 @@ try {
     echo "Erreur de connexion : " . $e->getMessage();
     die();
 }
-?>

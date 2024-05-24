@@ -4,8 +4,6 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: ../../connexion/views/users/connexion.php");
     exit;
 }
-
-// Si l'utilisateur est connecté, afficher le formulaire d'ajout d'article
 ?>
 
 <!DOCTYPE html>
