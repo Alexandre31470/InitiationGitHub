@@ -4,7 +4,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Code de connexion à la base de données
 try {
     $dsn = "mysql:host=localhost;dbname=ecfblog;charset=utf8";
     $username = "root";
@@ -17,11 +16,19 @@ try {
 
     $pdo = new PDO($dsn, $username, $password, $options);
 
-    // Prépare et exécute la requête
-    $stmt = $pdo->query("SELECT title, author, content, category FROM articles ORDER BY created_at");
+    // Récupère l'ID de l'article depuis l'URL
+    $articleId = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-    // Récupère les résultats
-    $articles = $stmt->fetchAll();
+    if ($articleId > 0) {
+        // Prépare et exécute la requête
+        $stmt = $pdo->prepare("SELECT id, title, author, category, content FROM articles WHERE id = :id");
+        $stmt->execute(['id' => $articleId]);
+
+        // Récupère l'article
+        $article = $stmt->fetch();
+    } else {
+        $article = null;
+    }
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();
     die();
