@@ -2,6 +2,15 @@
 nav {
     background-color: #333;
     padding: 1rem;
+    position: fixed;
+    z-index: 1000; /* assure que la nav reste en 1er plan */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+body {
+    padding-top: 100px; /* compense la taille de la navbar */
 }
 
 .nav-container {
@@ -51,7 +60,7 @@ nav a:active {
     color: #aaa;
 }
 
-/* Dropdown */
+/* DROPDOWN */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -82,7 +91,7 @@ nav a:active {
     border-radius: 5px;
 }
 
-/* Connexion and Deconnexion BTN */
+/* BTN CONNEXION DECONNEXION */
 .connexion a,
 .deconnexion a {
     background-color: #e73a76;
