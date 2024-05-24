@@ -9,6 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
+    <link rel="stylesheet" href="../../../pages/css/style.css">
     <link rel="stylesheet" href="../../public/css/styles.css">
 </head>
 
