@@ -26,16 +26,18 @@ footer {
 
 h1 {
   font-size: 24px;
-  color: white;
+  color: white !important;
   font-weight: bold;
   text-decoration: none;
 }
+
 h2 {
   margin-bottom: 20px;
   text-align: center;
 }
 
-h3,h4{
+h3,
+h4 {
   text-align: center;
 }
 

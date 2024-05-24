@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/details.css">
+    <link rel="stylesheet" href="../css/nav.css">
 </head>
+
 <body>
-    <header>
-        <h1>Détail de l'article</h1>
-    </header>
+
+    <?php require_once '../nav/nav.php' ?>
 
     <main>
         <section id="actions">
@@ -21,7 +23,9 @@
 
         <section id="article">
             <h2>Titre de l'article</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non urna nec nisl bibendum interdum. Suspendisse potenti. Sed nec ligula a lacus venenatis interdum. Nam eu eros et dolor tristique mollis.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non urna nec nisl bibendum interdum.
+                Suspendisse potenti. Sed nec ligula a lacus venenatis interdum. Nam eu eros et dolor tristique mollis.
+            </p>
         </section>
 
         <section id="commentaire">
@@ -47,7 +51,10 @@
     </main>
 
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> Mon Blog. Tous droits réservés.</p>
+        <p>&copy;
+            <?php echo date("Y"); ?> Mon Blog. Tous droits réservés.
+        </p>
     </footer>
-    </body>
+</body>
+
 </html>
