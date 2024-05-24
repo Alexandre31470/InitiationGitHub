@@ -16,7 +16,6 @@
 <body>
     <?php require_once '../nav/nav.php'; ?>
     <main>
-
         <section id="article">
             <?php if (!empty($article)) : ?>
                 <article class="article">
@@ -33,24 +32,36 @@
         </section>
 
         <section id="actions">
-            <button><a href="../editer_article/editer_article.php?id=<?php echo $article['id']; ?>">Modifier</a></button>
+            <button><a href="../editer_article/editer_article.php?id=<?php echo htmlspecialchars($article['id']); ?>">Modifier</a></button>
             <button>Supprimer la publication et les commentaires</button>
         </section>
 
         <section id="commentaire">
             <h2>Commentaires</h2>
-            <div class="comment">
-                <p><strong>Utilisateur 1 :</strong> Commentaire de l'utilisateur 1.</p>
-            </div>
-            <div class="comment">
-                <p><strong>Utilisateur 2 :</strong> Commentaire de l'utilisateur 2.</p>
-            </div>
+            <?php if (!empty($comments)) : ?>
+                <?php foreach ($comments as $comment) : ?>
+                    <div class="comment">
+                        <p><strong><?php echo htmlspecialchars($comment['author']); ?> :</strong> <?php echo htmlspecialchars($comment['content']); ?></p>
+                        <form action="detail_article.php?id=<?php echo $articleId; ?>" method="post" style="display:inline;">
+                            <input type="hidden" name="action" value="delete_comment">
+                            <input type="hidden" name="comment_id" value="<?php echo $comment['id']; ?>">
+                            <button type="submit">Supprimer</button>
+                        </form>
+                    </div>
+                <?php endforeach; ?>
+            <?php else : ?>
+                <p>Aucun commentaire trouvé.</p>
+            <?php endif; ?>
         </section>
 
         <section id="add-comment-form">
             <h2>Formulaire d'ajout de commentaire</h2>
-            <form action="ajouter-commentaire.php" method="post">
-                <textarea name="comment" rows="4" cols="50" placeholder="Votre commentaire"></textarea>
+            <form action="detail_article.php?id=<?php echo $articleId; ?>" method="post">
+                <input type="hidden" name="action" value="add_comment">
+                <label for="author">Auteur</label>
+                <input type="text" id="author" name="author" required>
+                <label for="comment">Commentaire</label>
+                <textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
                 <div class="form-buttons">
                     <button type="submit">Ajouter</button>
                     <button type="reset">Annuler</button>
