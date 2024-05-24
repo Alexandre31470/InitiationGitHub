@@ -20,6 +20,7 @@
 
     <section class="formulaire-edition">
         <form id="article-form" action="editer_article_logic.php" method="post">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($article['id']); ?>">
             <label for="title">Titre de l'Article</label>
             <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($article['title']); ?>" required>
 
@@ -42,7 +43,6 @@
                 <button type="button" class="greenBTN" onclick="window.location.href='../accueil/accueil.php'">
                     <p>Annuler</p>
                 </button>
-                <button class="greenBTN">Supprimer la publication et les commentaires liés</button>
                 <button type="submit" class="greenBTN">Mettre à jour</button>
             </div>
         </form>

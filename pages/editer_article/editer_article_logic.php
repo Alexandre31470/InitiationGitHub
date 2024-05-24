@@ -16,13 +16,38 @@ try {
 
     $pdo = new PDO($dsn, $username, $password, $options);
 
+    // Vérifier si le formulaire a été soumis
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $articleId = isset($_POST['id']) ? intval($_POST['id']) : 0;
+        $title = isset($_POST['title']) ? $_POST['title'] : '';
+        $author = isset($_POST['author']) ? $_POST['author'] : '';
+        $content = isset($_POST['content']) ? $_POST['content'] : '';
+        $category = isset($_POST['category']) ? $_POST['category'] : '';
+
+        if ($articleId > 0 && !empty($title) && !empty($author) && !empty($content) && !empty($category)) {
+            // Prépare et exécute la mise à jour
+            $stmt = $pdo->prepare("UPDATE articles SET title = :title, author = :author, content = :content, category = :category WHERE id = :id");
+            $stmt->execute([
+                'title' => $title,
+                'author' => $author,
+                'content' => $content,
+                'category' => $category,
+                'id' => $articleId
+            ]);
+
+            // Rediriger vers la page de détail de l'article modifié
+            header("Location: ../detail_article/detail_article.php?id=$articleId");
+            exit;
+        }
+    }
+
     // Récupère l'ID de l'article depuis l'URL
     $articleId = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
     if ($articleId > 0) {
-        // Prépare et exécute la requête
+        // Prépare et exécute la requête pour récupérer les détails de l'article
         $stmt = $pdo->prepare("SELECT id, title, author, category, content FROM articles WHERE id = :id");
-        $stmt->execute(['id' => $articleId]);   
+        $stmt->execute(['id' => $articleId]);
 
         // Récupère l'article
         $article = $stmt->fetch();
