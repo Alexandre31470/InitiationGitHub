@@ -66,3 +66,20 @@ nav a:active {
     color: #fff;
     border-radius: 5px;
 }
+
+/* Connexion and Deconnexion BTN */
+.connexion a, .deconnexion a {
+    background-color: #e73a76;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.connexion a:hover, .deconnexion a:hover {
+    background-color: #555;
+}
+
+.connexion a:active, .deconnexion a:active {
+    background-color: #444;
+}

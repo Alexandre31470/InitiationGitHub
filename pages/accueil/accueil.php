@@ -1,11 +1,10 @@
 <?php
+session_start();
 // Inclure le code de connexion à la base de données et la logique de récupération des articles
 include 'accueil_logic.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,10 +13,8 @@ include 'accueil_logic.php';
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/nav.css">
 </head>
-
 <body>
     <?php require_once '../nav/nav.php'; ?>
-
     <main>
         <section id="last_articles">
             <h2>Derniers articles</h2>
@@ -37,16 +34,13 @@ include 'accueil_logic.php';
                 <a href="../liste_articles/liste_articles.php">Voir plus</a>
             </div>
         </section>
-
         <section id="new-article">
             <button type="button" onclick="window.location.href='../ajout_article/template_ajout_article.php'">Créer un nouvel
                 article</button>
         </section>
     </main>
-
     <footer>
         <p>Coucou c'est moi tchoupi</p>
     </footer>
 </body>
-
 </html>
