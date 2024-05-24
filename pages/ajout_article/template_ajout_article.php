@@ -15,6 +15,7 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter un Article</title>
+    <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/ajout_article.css">
     <link rel="stylesheet" href="../css/nav.css">
@@ -55,9 +56,10 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </div>
 
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> Notre super Blog. Tous droits réservés à La Team.</p>
+    </footer>
+
 </body>
-<footer>
-    <p>&copy; <?php echo date("Y"); ?> Mon Blog. Tous droits réservés.</p>
-</footer>
 
 </html>

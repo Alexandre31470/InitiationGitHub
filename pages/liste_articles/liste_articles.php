@@ -8,8 +8,8 @@ include 'liste_articles_logic.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/liste_article.css">
     <title>Mes Articles</title>
 </head>
@@ -39,9 +39,11 @@ include 'liste_articles_logic.php';
             <?php endif; ?>
         </div>
     </main>
+
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> Mon Blog. Tous droits réservés.</p>
+        <p>&copy; <?php echo date("Y"); ?> Notre super Blog. Tous droits réservés à La Team.</p>
     </footer>
+    
 </body>
 
 </html>
