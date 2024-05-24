@@ -50,10 +50,10 @@ textarea {
 
 button {
     width: 40%;
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
-    color: white;
+    border-radius: 5px;
+    color: #fff;
     font-size: large;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -62,24 +62,25 @@ button {
 button p {
     margin: 0px;
     padding: 0px;
+    color: #fff;
 }
 
 .greenBTN {
-    background-color: #4cae4c;
+    background-color: #555;
+}
+
+.greenBTN:hover {
+    background-color: #e73a76;
 }
 
 .redBTN {
-    background-color: crimson;
+    background-color: #e73a76;
 }
 
-button:hover {
-    opacity: 0.9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+.redBTN:hover {
+    background-color: #555;
 }
 
-button:hover p {
-    transform: scale(1.1);
-}
 
 .flex-btn {
     display: flex;
