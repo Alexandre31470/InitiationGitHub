@@ -17,8 +17,17 @@ try {
 
     $pdo = new PDO($dsn, $username, $password, $options);
 
-    // Prépare et exécute la requête
-    $stmt = $pdo->query("SELECT id, title, author, content, category FROM articles ORDER BY created_at");
+    // Vérifie si une catégorie est sélectionnée
+    $category = isset($_GET['category']) ? $_GET['category'] : null;
+
+    if ($category) {
+        // Prépare et exécute la requête pour filtrer les articles par catégorie
+        $stmt = $pdo->prepare("SELECT id, title, author, content, category FROM articles WHERE category = :category ORDER BY created_at");
+        $stmt->execute(['category' => $category]);
+    } else {
+        // Prépare et exécute la requête pour récupérer tous les articles
+        $stmt = $pdo->query("SELECT id, title, author, content, category FROM articles ORDER BY created_at");
+    }
 
     // Récupère les résultats
     $articles = $stmt->fetchAll();

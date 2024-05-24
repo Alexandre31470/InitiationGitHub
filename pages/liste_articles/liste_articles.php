@@ -18,6 +18,9 @@ include 'liste_articles_logic.php';
     <?php require_once '../nav/nav.php'; ?>
     <main>
         <h2>Mes articles</h2>
+        <?php if (isset($_GET['category'])) : ?>
+            <h3>Catégorie: <?php echo htmlspecialchars($_GET['category']); ?></h3>
+        <?php endif; ?>
         <div class="liste_articles">
             <?php if (!empty($articles)) : ?>
                 <?php foreach ($articles as $article) : ?>
