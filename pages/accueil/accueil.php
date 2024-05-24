@@ -19,15 +19,18 @@ include 'accueil_logic.php';
     <?php require_once '../nav/nav.php'; ?>
 
     <main>
+        <h2>Derniers articles</h2>
+
         <section id="last_articles">
-            <h2>Derniers articles</h2>
             <?php if (!empty($articles)) : ?>
                 <?php foreach ($articles as $article) : ?>
                     <article class="article">
-                        <div class="text">
-                            <h3><?php echo htmlspecialchars($article['title']); ?></h3>
-                            <p><?php echo htmlspecialchars($article['content']); ?></p>
-                        </div>
+                        <a href="../detail_article/detail_article.html">
+                            <div class="text">
+                                <h3><?php echo htmlspecialchars($article['title']); ?></h3>
+                                <p><?php echo htmlspecialchars($article['content']); ?></p>
+                            </div>
+                        </a>
                     </article>
                 <?php endforeach; ?>
             <?php else : ?>
@@ -44,9 +47,10 @@ include 'accueil_logic.php';
         </section>
     </main>
 
-    <footer>
-        <p>Coucou c'est moi tchoupi</p>
-    </footer>
 </body>
+
+<footer>
+    <p>&copy; <?php echo date("Y"); ?> Mon Blog. Tous droits réservés.</p>
+</footer>
 
 </html>
