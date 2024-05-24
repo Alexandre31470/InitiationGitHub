@@ -25,7 +25,7 @@ include 'accueil_logic.php';
             <?php if (!empty($articles)) : ?>
                 <?php foreach ($articles as $article) : ?>
                     <article class="article">
-                        <a href="../detail_article/detail_article.php">
+                        <a href="../detail_article/detail_article.php?id=<?php echo htmlspecialchars($article['id']); ?>">
                             <div class="text">
                                 <h3><?php echo htmlspecialchars($article['title']); ?></h3>
                                 <p><?php echo htmlspecialchars($article['content']); ?></p>
