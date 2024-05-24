@@ -32,11 +32,13 @@
         </section>
 
         <section id="actions">
-            <button><a href="../editer_article/editer_article.php?id=<?php echo htmlspecialchars($article['id']); ?>">Modifier</a></button>
-            <form action="detail_article.php?id=<?php echo $articleId; ?>" method="post" style="display:inline;">
-                <input type="hidden" name="action" value="delete_article">
-                <button type="submit">Supprimer la publication et les commentaires</button>
-            </form>
+            <?php if (isset($_SESSION['pseudo']) && $article['author'] === $_SESSION['pseudo']) : ?>
+                <button><a href="../editer_article/editer_article.php?id=<?php echo htmlspecialchars($article['id']); ?>">Modifier</a></button>
+                <form action="detail_article.php?id=<?php echo $articleId; ?>" method="post" style="display:inline;">
+                    <input type="hidden" name="action" value="delete_article">
+                    <button type="submit">Supprimer la publication et les commentaires</button>
+                </form>
+            <?php endif; ?>
         </section>
 
         <section id="commentaire">
@@ -45,11 +47,13 @@
                 <?php foreach ($comments as $comment) : ?>
                     <div class="comment">
                         <p><strong><?php echo htmlspecialchars($comment['author']); ?> :</strong> <?php echo htmlspecialchars($comment['content']); ?></p>
-                        <form action="detail_article.php?id=<?php echo $articleId; ?>" method="post" style="display:inline;">
-                            <input type="hidden" name="action" value="delete_comment">
-                            <input type="hidden" name="comment_id" value="<?php echo $comment['id']; ?>">
-                            <button type="submit">Supprimer</button>
-                        </form>
+                        <?php if (isset($_SESSION['pseudo']) && $comment['author'] === $_SESSION['pseudo']) : ?>
+                            <form action="detail_article.php?id=<?php echo $articleId; ?>" method="post" style="display:inline;">
+                                <input type="hidden" name="action" value="delete_comment">
+                                <input type="hidden" name="comment_id" value="<?php echo $comment['id']; ?>">
+                                <button type="submit">Supprimer</button>
+                            </form>
+                        <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
             <?php else : ?>
@@ -58,18 +62,20 @@
         </section>
 
         <section id="add-comment-form">
-            <h2>Formulaire d'ajout de commentaire</h2>
-            <form action="detail_article.php?id=<?php echo $articleId; ?>" method="post">
-                <input type="hidden" name="action" value="add_comment">
-                <label for="author">Auteur</label>
-                <input type="text" id="author" name="author" required>
-                <label for="comment">Commentaire</label>
-                <textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
-                <div class="form-buttons">
-                    <button type="submit">Ajouter</button>
-                    <button type="reset">Annuler</button>
-                </div>
-            </form>
+            <?php if (isset($_SESSION['user_id'])) : ?>
+                <h2>Formulaire d'ajout de commentaire</h2>
+                <form action="detail_article.php?id=<?php echo $articleId; ?>" method="post">
+                    <input type="hidden" name="action" value="add_comment">
+                    <label for="comment">Commentaire</label>
+                    <textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
+                    <div class="form-buttons">
+                        <button type="submit">Ajouter</button>
+                        <button type="reset">Annuler</button>
+                    </div>
+                </form>
+            <?php else : ?>
+                <p>Veuillez <a href="../connexion/connexion.php">vous connecter</a> pour ajouter un commentaire.</p>
+            <?php endif; ?>
         </section>
     </main>
     <footer>

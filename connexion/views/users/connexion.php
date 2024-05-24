@@ -28,11 +28,11 @@ if (session_status() === PHP_SESSION_NONE) {
             }
         }
         ?>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="pseudo">Pseudo:</label>
+        <input type="text" id="pseudo" name="pseudo" required>
 
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="mot_de_passe">Mot de passe:</label>
+        <input type="password" id="mot_de_passe" name="mot_de_passe" required>
 
         <button type="submit">Se connecter</button>
         <a href="reset_password.php">Mot de passe oublié ?</a>

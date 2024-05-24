@@ -2,30 +2,43 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require 'config/database.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
+// Activer le reporting des erreurs
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-    try {
-        $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE mail = :email");
-        $stmt->bindParam(':email', $email);
-        $stmt->execute();
+try {
+    $dsn = "mysql:host=localhost;dbname=ecfblog;charset=utf8";
+    $username = "root";
+    $password = "";
+    $options = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES => false,
+    ];
+
+    $pdo = new PDO($dsn, $username, $password, $options);
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $pseudo = $_POST['pseudo'];
+        $mot_de_passe = $_POST['mot_de_passe'];
+
+        $stmt = $pdo->prepare("SELECT id_utilisateur, pseudo, mot_de_passe_hash FROM utilisateurs WHERE pseudo = :pseudo");
+        $stmt->execute(['pseudo' => $pseudo]);
         $user = $stmt->fetch();
 
-        if ($user && password_verify($password, $user['mot_de_passe_hash'])) {
-            $_SESSION['user'] = $user;
-            header('Location: ../pages/accueil/accueil.php');
-            exit();
+        if ($user && password_verify($mot_de_passe, $user['mot_de_passe_hash'])) {
+            $_SESSION['user_id'] = $user['id_utilisateur'];
+            $_SESSION['pseudo'] = $user['pseudo'];
+            header("Location: ../pages/liste_articles/liste_articles.php");
+            exit;
         } else {
-            header('Location: ../connexion/pageconnexion.php?error=Email ou mot de passe incorrect');
-            exit();
+            header("Location: connexion.php?error=Nom d'utilisateur ou mot de passe incorrect.");
+            exit;
         }
-    } catch (PDOException $e) {
-        header('Location: ../connexion/pageconnexion.php?error=Erreur de connexion à la base de données');
-        exit();
     }
-} else {
-    echo "Méthode de requête non autorisée.";
+} catch (PDOException $e) {
+    echo "Erreur de connexion : " . $e->getMessage();
+    die();
 }

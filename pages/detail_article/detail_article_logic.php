@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Activer le reporting des erreurs
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -9,9 +11,9 @@ try {
     $username = "root";
     $password = "";
     $options = [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
+        PDO::ATTR_EMULATE_PREPARES => false,
     ];
 
     $pdo = new PDO($dsn, $username, $password, $options);
@@ -21,8 +23,8 @@ try {
 
     // Ajouter un commentaire
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
-        if ($_POST['action'] === 'add_comment') {
-            $author = $_POST['author'];
+        if ($_POST['action'] === 'add_comment' && isset($_SESSION['user_id'])) {
+            $author = $_SESSION['pseudo'];
             $comment = $_POST['comment'];
 
             $stmt = $pdo->prepare("INSERT INTO comments (article_id, author, content) VALUES (:article_id, :author, :content)");
@@ -34,26 +36,40 @@ try {
         }
 
         // Supprimer un commentaire
-        if ($_POST['action'] === 'delete_comment' && isset($_POST['comment_id'])) {
+        if ($_POST['action'] === 'delete_comment' && isset($_SESSION['user_id'])) {
             $commentId = intval($_POST['comment_id']);
 
-            $stmt = $pdo->prepare("DELETE FROM comments WHERE id = :id");
+            // Vérifier si l'utilisateur est l'auteur du commentaire
+            $stmt = $pdo->prepare("SELECT author FROM comments WHERE id = :id");
             $stmt->execute(['id' => $commentId]);
+            $comment = $stmt->fetch();
+
+            if ($comment && $comment['author'] === $_SESSION['pseudo']) {
+                $stmt = $pdo->prepare("DELETE FROM comments WHERE id = :id");
+                $stmt->execute(['id' => $commentId]);
+            }
         }
 
         // Supprimer l'article et ses commentaires
-        if ($_POST['action'] === 'delete_article' && $articleId > 0) {
-            // Supprimer les commentaires associés
-            $stmt = $pdo->prepare("DELETE FROM comments WHERE article_id = :article_id");
-            $stmt->execute(['article_id' => $articleId]);
-
-            // Supprimer l'article
-            $stmt = $pdo->prepare("DELETE FROM articles WHERE id = :id");
+        if ($_POST['action'] === 'delete_article' && $articleId > 0 && isset($_SESSION['user_id'])) {
+            // Vérifier si l'utilisateur est l'auteur de l'article
+            $stmt = $pdo->prepare("SELECT author FROM articles WHERE id = :id");
             $stmt->execute(['id' => $articleId]);
+            $article = $stmt->fetch();
 
-            // Rediriger vers la page d'accueil ou une autre page appropriée
-            header("Location: ../accueil/accueil.php");
-            exit;
+            if ($article && $article['author'] === $_SESSION['pseudo']) {
+                // Supprimer les commentaires associés
+                $stmt = $pdo->prepare("DELETE FROM comments WHERE article_id = :article_id");
+                $stmt->execute(['article_id' => $articleId]);
+
+                // Supprimer l'article
+                $stmt = $pdo->prepare("DELETE FROM articles WHERE id = :id");
+                $stmt->execute(['id' => $articleId]);
+
+                // Rediriger vers la page d'accueil ou une autre page appropriée
+                header("Location: ../accueil/accueil.php");
+                exit;
+            }
         }
     }
 
