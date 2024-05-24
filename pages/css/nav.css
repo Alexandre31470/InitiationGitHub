@@ -6,7 +6,7 @@ nav {
     z-index: 1000; /* assure que la nav reste en 1er plan */
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
 }
 
 body {
@@ -17,6 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 98vw;
 }
 
 .logo {
