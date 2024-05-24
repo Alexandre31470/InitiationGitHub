@@ -16,7 +16,9 @@ p {
 /* FOOTER */
 footer {
   text-align: center;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   background-color: #f4f4f4;
   padding: 20px 0;

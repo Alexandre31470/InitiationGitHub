@@ -20,7 +20,6 @@ include 'accueil_logic.php';
     <?php require_once '../nav/nav.php'; ?>
     <main>
         <h2>Derniers articles</h2>
-
         <section id="last_articles">
             <?php if (!empty($articles)) : ?>
                 <?php foreach ($articles as $article) : ?>
@@ -39,20 +38,17 @@ include 'accueil_logic.php';
             <div class="more">
                 <a href="../liste_articles/liste_articles.php">Voir plus</a>
             </div>
-
             <section id="new-article">
                 <button type="button" onclick="window.location.href='../ajout_article/template_ajout_article.php'">Créer un nouvel
                     article</button>
             </section>
-
         </section>
-
     </main>
 
-</body>
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> Notre super Blog. Tous droits réservés à La Team.</p>
+    </footer>
 
-<footer>
-    <p>&copy; <?php echo date("Y"); ?> Notre super Blog. Tous droits réservés à La Team.</p>
-</footer>
+</body>
 
 </html>
