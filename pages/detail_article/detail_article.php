@@ -74,7 +74,7 @@
                     </div>
                 </form>
             <?php else : ?>
-                <p>Veuillez <a href="../connexion/connexion.php">vous connecter</a> pour ajouter un commentaire.</p>
+                <p>Veuillez <a href="../../connexion/views/users/connexion.php">vous connecter</a> pour ajouter un commentaire.</p>
             <?php endif; ?>
         </section>
     </main>
