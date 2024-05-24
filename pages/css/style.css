@@ -34,6 +34,8 @@ h1 {
 h2 {
   margin-bottom: 20px;
   text-align: center;
+  color: #005395;
+  font-size: 30px;
 }
 
 h3,
@@ -41,6 +43,13 @@ h4 {
   text-align: center;
 }
 
+h3 {
+  color: #c711A4 ;
+}
+
+h4 {
+  color: #005395;
+}
 
 a {
   display: block;

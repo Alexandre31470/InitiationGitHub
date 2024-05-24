@@ -26,6 +26,10 @@ article {
     z-index: 1;
 }
 
+article h2 {
+    color: #8A3D7B;
+}
+
 .show-more-button {
     display: none;
     justify-content: center;
