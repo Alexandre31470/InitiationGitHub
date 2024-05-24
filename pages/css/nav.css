@@ -10,7 +10,7 @@ nav {
     align-items: center;
 }
 
-.logo{
+.logo {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -83,7 +83,8 @@ nav a:active {
 }
 
 /* Connexion and Deconnexion BTN */
-.connexion a, .deconnexion a {
+.connexion a,
+.deconnexion a {
     background-color: #e73a76;
     color: #fff;
     padding: 10px 20px;
@@ -91,10 +92,12 @@ nav a:active {
     text-decoration: none;
 }
 
-.connexion a:hover, .deconnexion a:hover {
+.connexion a:hover,
+.deconnexion a:hover {
     background-color: #555;
 }
 
-.connexion a:active, .deconnexion a:active {
+.connexion a:active,
+.deconnexion a:active {
     background-color: #444;
 }
