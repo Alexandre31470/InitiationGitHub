@@ -1,8 +1,8 @@
 <?php
+session_start();
 // Inclure le code de connexion à la base de données et la logique de récupération des articles
 include 'accueil_logic.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,11 +13,11 @@ include 'accueil_logic.php';
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/accueil.css" </head>
+    <link rel="stylesheet" href="../css/accueil.css">
+</head>
 
 <body>
     <?php require_once '../nav/nav.php'; ?>
-
     <main>
         <h2>Derniers articles</h2>
 
@@ -55,4 +55,4 @@ include 'accueil_logic.php';
     <p>&copy; <?php echo date("Y"); ?> Mon Blog. Tous droits réservés.</p>
 </footer>
 
-</html> 
+</html>
