@@ -20,24 +20,41 @@ try {
     $articleId = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
     // Ajouter un commentaire
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add_comment') {
-        $author = $_POST['author'];
-        $comment = $_POST['comment'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+        if ($_POST['action'] === 'add_comment') {
+            $author = $_POST['author'];
+            $comment = $_POST['comment'];
 
-        $stmt = $pdo->prepare("INSERT INTO comments (article_id, author, content) VALUES (:article_id, :author, :content)");
-        $stmt->execute([
-            'article_id' => $articleId,
-            'author' => $author,
-            'content' => $comment
-        ]);
-    }
+            $stmt = $pdo->prepare("INSERT INTO comments (article_id, author, content) VALUES (:article_id, :author, :content)");
+            $stmt->execute([
+                'article_id' => $articleId,
+                'author' => $author,
+                'content' => $comment
+            ]);
+        }
 
-    // Supprimer un commentaire
-    if (isset($_POST['action']) && $_POST['action'] === 'delete_comment' && isset($_POST['comment_id'])) {
-        $commentId = intval($_POST['comment_id']);
+        // Supprimer un commentaire
+        if ($_POST['action'] === 'delete_comment' && isset($_POST['comment_id'])) {
+            $commentId = intval($_POST['comment_id']);
 
-        $stmt = $pdo->prepare("DELETE FROM comments WHERE id = :id");
-        $stmt->execute(['id' => $commentId]);
+            $stmt = $pdo->prepare("DELETE FROM comments WHERE id = :id");
+            $stmt->execute(['id' => $commentId]);
+        }
+
+        // Supprimer l'article et ses commentaires
+        if ($_POST['action'] === 'delete_article' && $articleId > 0) {
+            // Supprimer les commentaires associés
+            $stmt = $pdo->prepare("DELETE FROM comments WHERE article_id = :article_id");
+            $stmt->execute(['article_id' => $articleId]);
+
+            // Supprimer l'article
+            $stmt = $pdo->prepare("DELETE FROM articles WHERE id = :id");
+            $stmt->execute(['id' => $articleId]);
+
+            // Rediriger vers la page d'accueil ou une autre page appropriée
+            header("Location: ../accueil/accueil.php");
+            exit;
+        }
     }
 
     if ($articleId > 0) {

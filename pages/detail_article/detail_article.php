@@ -33,7 +33,10 @@
 
         <section id="actions">
             <button><a href="../editer_article/editer_article.php?id=<?php echo htmlspecialchars($article['id']); ?>">Modifier</a></button>
-            <button>Supprimer la publication et les commentaires</button>
+            <form action="detail_article.php?id=<?php echo $articleId; ?>" method="post" style="display:inline;">
+                <input type="hidden" name="action" value="delete_article">
+                <button type="submit">Supprimer la publication et les commentaires</button>
+            </form>
         </section>
 
         <section id="commentaire">
